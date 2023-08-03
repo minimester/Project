@@ -56,7 +56,7 @@ To `scripts`, we can add a `start` script that will run our `app.js` as such:
     "start": "node app.js"
   }
 ```
-This allows us now to simple run `npm start` and our application will run. We could also run `node app.js` to run the app. It is recommended to use `npm start` because its a way of standardizing the way one runs their project.
+This allows us now to simply run `npm start` and our application will run. We could also run `node app.js` to run the app. It is recommended to use `npm start` because its a way of standardizing the way one runs their project.
 
 Another nice to have, we can add the `dependencies` property to our `package.json` as such:
 
