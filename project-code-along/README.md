@@ -235,7 +235,7 @@ async function playerInfo() {
     await pathQuestion()
 };
 ```
-Since there are three options, we want two of the choices to lead to other questions, and one to end the game. Let's use an `if/else` statement to control the logic of our game.
+Since there are three options, we want two of the choices to lead to other questions, and one to end the game. This will be handled in `pathChoice` function. As you noticed, we pass in the answer the user selects. We will also leverage one the packages we haven't used yet.
 
 ```js
 async function pathQuestion() {
@@ -244,22 +244,15 @@ async function pathQuestion() {
         type: 'list',
         message: `Welcome ${playerName}, what path will you choose? \n`,
         choices: [
-            { name:'left - you hear a breeze echoing down the tunnel', value: 'left' },
+            { name: 'left - you hear a breeze echoing down the tunnel', value: 'left' },
             { name: 'right - you hear rocks crumbling in the distance', value: 'right' },
             { name: 'straight - you hear an eerie silence', value: 'straight' }
         ]
     });
     //execute the animation and prompt
     await pathChoice(answers.question_1);
-        //continue down the left path
-    if(answers.question_1 === 'left') {
-        //continue down the right path
-    } else if (answers.question_1 === 'right') {
-         
-    } 
 };
 ```
-We use the `if` checks to check if the answer equals one of the choices, then we call either the `leftQuestion` or `rightQuestion` functions. We haven't built those yet. Let's first handle the `pathChoice` function. As you noticed, we pass in the answer the user selects. We will also leverage one the packages we haven't used yet.
 
 ## Building the pathChoice Function
 The rest of the logic and implementation of the packages would be very similar to what we have already done. We will just use different operators to control the flow of logic to make it feel more like a game.  
@@ -281,7 +274,7 @@ async function pathChoice(choice) {
 }
 ```
 
-Let's add some `choice` specific responses and animations to it.
+Let's add some `choice` specific responses and animations to it. Let's use an `if/else` statement to control the logic of our game. We use the `if` checks to check if the answer equals one of the choices, then we call either the `leftQuestion` or `rightQuestion` functions. We haven't built those yet.
 
 ```js
 async function pathChoice(choice) {
@@ -329,7 +322,7 @@ async function handleLeftAnswer(choice) {
         spinner.success({ text: `a secret passage opens, ${playerName}, you made the right choice`});
         await finalQuestion()
     } else {
-        spinner.warn({ text: `${playerName}, you should have pressed the button. ${chalk.bgRed(`FATAL - terminating process due to inactivity`)}`});
+        spinner.warn({ text: `${playerName}, you should have pressed the button. ${chalk.bgRed(`FATAL - terminating process`)}`});
         process.exit(1)
     }
 }
@@ -399,7 +392,7 @@ async function handleFinalAnswer(choice){
         spinner.success({ text: `Congratulations`});
         winnerText()
     } else {
-        spinner.warn({ text: `${chalk.bgRed(`FATAL - terminating process due to inactivity`)}`});
+        spinner.warn({ text: `${chalk.bgRed(`FATAL - terminating process`)}`});
     }
 }
 ```
