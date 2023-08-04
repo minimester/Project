@@ -12,6 +12,15 @@ Here are some ideas to get you thinking of what to implement:
 - Day Scheduler
 - To-Do Tracker
 
+## As a developer I want to. . .
+- The application to run in the command line
+- Utilize different NPM packages
+- Create and utilize functions
+- Implement JavaScript data structures (arrays, objects)
+- Implement at least one loop (`for`, `while`, etc.)
+- The application to start when a function is invoked
+- Display the output to the user
+
 ## Getting Started
 You will want to create your project's `package.json` to install new packages and run your code.
 
@@ -115,15 +124,6 @@ You can write all your code in `app.js` and check your code by running:
 ```bash
 npm start
 ```
-
-## As a developer I want to. . .
-- The application to run in the command line
-- Utilize different NPM packages
-- Create and utilize functions
-- Implement JavaScript data structures (arrays, objects)
-- Implement at least one loop (`for`, `while`, etc.)
-- The application to start when a function is invoked
-- Display the output to the user
 
 ## Links
 - [NPM](https://www.npmjs.com/)
