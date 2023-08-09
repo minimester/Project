@@ -282,8 +282,10 @@ async function pathChoice(choice) {
     await resolveAnimations();
     if (choice ==='left') {
         spinner.success({ text: `Interesting choice, ${playerName}, continue on`});
+        await leftQuestion();
     } else if (choice ==='right') {
         spinner.warn({ text: `Interesting choice, ${playerName}, continue on`});
+        await rightQuestion();
     } else {
         spinner.error({ text: chalk.bgRed(`FATAL - terminating process`)});
         process.exit(1)
